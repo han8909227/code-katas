@@ -30,3 +30,10 @@
 - **Tests**: `test_rect.py`
 - **URL**: [challenge url](http://www.codewars.com/kata/559a28007caad2ac4e000083/train/python)
 
+
+
+**Sum of the first nth term of Series (7th kyu)**
+
+- **Module**: `sum_series.py`
+- **Tests**: `test_sum_series.py`
+- **URL**: [challenge url](https://www.codewars.com/kata/sum-of-the-first-nth-term-of-series/train/python)
