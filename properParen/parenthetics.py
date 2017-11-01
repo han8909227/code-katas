@@ -43,23 +43,20 @@ class Stack(object):
         return self.count
 
 
-def paren(s):
+def paren(paren_combo):
     """Check for valid paren combos."""
-    l = Stack()
-    for p in s:
-        l.push(p)
+    stack = Stack()
+    for paren in paren_combo:
+        stack.push(paren)
     count = 0
-    for p in range(len(l)):
-        x = l.pop()
-        if x == ')':
+    for paren in range(len(stack)):
+        current = stack.pop()
+        if current == ')':
             count += 1
-        elif x == '(':
+        elif current == '(':
             if count == 0:
                 return 1
             else:
                 count -= 1
 
-    if count == 0:
-        return 0
-    else:
-        return -1
+    return 0 if count == 0 else -1
