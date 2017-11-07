@@ -7,9 +7,8 @@ from string import ascii_letters, digits, punctuation
 VALID_CHARS = '{}{}{}'.format(ascii_letters, digits, punctuation)
 
 
-# ---------Code Wars' correct solutions for testing purposes-------------------
-
 def example_watch_pyramid_from_the_side(characters):
+    """Test the watch from side method."""
     width = 2 * len(characters) - 1
     output = '{{:^{}}}'.format(width).format
     return '\n'.join(output(char * dex) for char, dex in
@@ -17,6 +16,7 @@ def example_watch_pyramid_from_the_side(characters):
 
 
 def example_watch_pyramid_from_above(characters):
+    """Test the pyramid from above method."""
     width = 2 * len(characters) - 1
     dex = width - 1
     result = []
@@ -30,18 +30,18 @@ def example_watch_pyramid_from_above(characters):
 
 
 def example_count_visible_characters_of_the_pyramid(characters):
+    """Return the visible blocks."""
     return (2 * len(characters) - 1) ** 2
 
 
 def example_count_all_characters_of_the_pyramid(characters):
+    """Return all block count."""
     return sum(a ** 2 for a in range(1, 2 * len(characters), 2))
 
 
 def random_string():
+    """Return a valid random string."""
     return ''.join(choice(VALID_CHARS) for _ in range(randint(1, 10)))
-
-
-# ----------------------- None or Empty Tests ---------------------------------
 
 
 def test_pyramid_handles_none_and_empty_inputs():
@@ -54,9 +54,6 @@ def test_pyramid_handles_none_and_empty_inputs():
     assert watch_pyramid_from_above('') == ''
     assert count_visible_characters_of_the_pyramid('') == -1
     assert count_all_characters_of_the_pyramid('') == -1
-
-
-# --------------------------- Basic Tests -------------------------------------
 
 
 def test_pyramid_can_handle_two_characters():
@@ -107,11 +104,9 @@ def test_pyramid_can_handle_5_descending_ordered_characters():
         '54321') == example_count_all_characters_of_the_pyramid('54321')
 
 
-# ---------------------------- Random Tests -----------------------------------
-
 def test_pyramid_with_random_inputs():
     """Test that pyramid handles random inputs."""
-    for _ in range(100):
+    for _ in range(20):
         characters = random_string()
         assert watch_pyramid_from_the_side(
             characters) == example_watch_pyramid_from_the_side(characters)
@@ -123,3 +118,4 @@ def test_pyramid_with_random_inputs():
         assert count_all_characters_of_the_pyramid(
             characters) == example_count_all_characters_of_the_pyramid(
             characters)
+
