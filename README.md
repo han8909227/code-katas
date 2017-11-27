@@ -37,3 +37,10 @@
 - **Module**: `sum_series.py`
 - **Tests**: `test_sum_series.py`
 - **URL**: [challenge url](https://www.codewars.com/kata/sum-of-the-first-nth-term-of-series/train/python)
+
+
+**Sorted Cards (7th kyu)**
+
+- **Module**: `sorted_cards.py`
+- **Tests**: `test_sorted_cards.py`
+- **URL**: [challenge url](https://www.codewars.com/kata/sort-deck-of-cards/train/python)
